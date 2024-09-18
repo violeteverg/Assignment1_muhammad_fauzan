@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+    <title>Web porto</title>
+  </head>
+  <body>
+    <!-- main body -->
+    <header class="flex justify-center">
+      <nav
+        class="w-[95%] z-[9999] rounded-full h-14 flex items-center justify-between px-6 bg-[#4A772F] text-white fixed top-2 mx-auto"
+      >
+        <a href="#" class="text-2xl font-bold">Fauzan.</a>
+
+        <!-- desktop view -->
+        <ul class="desktop-menu hidden lg:flex space-x-8">
+          <li>
+            <a href="#about" class="menuItem hover:text-green-500 text-white"
+              >About</a
+            >
+          </li>
+          <li>
+            <a href="#experience" class="menuItem hover:text-green-500"
+              >Experience</a
+            >
+          </li>
+          <li>
+            <a href="#project" class="menuItem hover:text-green-500">Project</a>
+          </li>
+          <li>
+            <a href="#contact" class="menuItem hover:text-green-500">Contact</a>
+          </li>
+        </ul>
+
+        <!-- mobile view -->
+        <ul
+          class="mobile-menu fixed inset-0 bg-[#4A772F] opacity-90 text-white flex flex-col items-center gap-8 text-4xl justify-center translate-x-full transition-transform duration-700"
+        >
+          <li>
+            <a
+              href="#about"
+              class="menuItem hover:text-green-500 hover:underline"
+              >About</a
+            >
+          </li>
+          <li>
+            <a
+              href="#experience"
+              class="menuItem hover:text-green-500 hover:underline"
+              >Experience</a
+            >
+          </li>
+          <li>
+            <a
+              href="#project"
+              class="menuItem hover:text-green-500 hover:underline"
+              >Project</a
+            >
+          </li>
+          <li>
+            <a
+              href="#contact"
+              class="menuItem hover:text-green-500 hover:underline"
+              >Contact</a
+            >
+          </li>
+        </ul>
+
+        <button class="hamburger group lg:hidden">
+          <div>
+            <span
+              class="bar block w-6 h-0.5 bg-white my-1 transition-transform"
+            ></span>
+            <span
+              class="bar block w-6 h-0.5 bg-white my-1 transition-transform"
+            ></span>
+            <span
+              class="bar block w-6 h-0.5 bg-white my-1 transition-transform"
+            ></span>
+          </div>
+        </button>
+      </nav>
+    </header>
+
+    <!-- main body -->
+    <main>
+      <!-- hero -->
+      <section
+        class="relative flex h-svh overflow-hidden lg:h-svh lg:flex lg:justify-center"
+      >
+        <div
+          class="z-30 flex justify-center w-[95%] p-3 items-center h-dvh lg:h-svh lg:justify-center lg:items-center"
+        >
+          <div
+            class="space-y-8 flex flex-col lg:w-full lg:items-start lg:tracking-wide"
+          >
+            <h1
+              class="text-5xl text-white font-outline-2 font-bold lg:text-wrap lg:text-8xl"
+            >
+              Full-Stack Developer
+            </h1>
+            <a
+              class="border rounded-full flex bg-white w-[35vw] h-[5vh] flex items-center lg:w-[20vw]"
+              href="https://docs.google.com/document/d/1qB9-L3SMYVqMCH13a2m6ExXqOn9G2xzO/edit?usp=sharing&ouid=104855444691692986367&rtpof=true&sd=true"
+            >
+              <span
+                class="inline-flex w-full h-full justify-center items-center text-white font-semibold rounded-l-full rounded-tr-full bg-green-600 hover:bg-teal-700"
+                >Download Resume</span
+              >
+              <img
+                src="public/assets/svg/arrow-up-right.svg"
+                alt="arrow-up-right"
+                class="m-2"
+              />
+            </a>
+          </div>
+          <img
+            src="public/assets/pics/profile_pict.png"
+            alt="profile_pict"
+            class="w-[200px] lg:w-[60%] lg:h-[70%] lg:bottom-0"
+          />
+        </div>
+        <video
+          autoplay
+          loop
+          muted
+          class="absolute z-10 w-full h-full object-cover"
+        >
+          <source src="public/assets/vid/bg_live_1.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </section>
+
+      <!-- about me -->
+      <section
+        class="h-svh py-20 px-2 lg:h-svh lg:flex lg:justify-center"
+        id="about"
+      >
+        <div
+          class="p-4 flex flex-col gap-4 lg:w-[70%] lg:justify-center lg:gap-1"
+        >
+          <h1 class="text-5xl font-bold lg:h-[20%] text-[#87b10b]">About me</h1>
+          <article class="text-wrap text-slate-900 lg:text-lg">
+            <p>
+              Passionate and motivated Junior Fullstack Developer with a strong
+              foundation in front-end technologies. Eager to leverage skills in
+              HTML, CSS, JavaScript, and React.js to craft visually captivating,
+              user-centric interfaces. Proficient in modern front-end tools such
+              as Tailwind CSS, Sass preprocessors, and responsive design
+              principles, ensuring seamless user experiences across devices.
+              Dedicated to staying current with the latest trends in web
+              development and continually improving design and functionality
+            </p>
+            <br />
+            <p>
+              Equally adept in back-end development, with expertise in Node.js,
+              Express, and NestJS. Skilled at building robust, scalable back-end
+              systems that support seamless front-end interactions. Familiar
+              with RESTful APIs, server-side logic, and database management,
+              ensuring efficient and secure data flow. Always striving to
+              improve code efficiency and embrace new technologies in the
+              ever-evolving field of fullstack development
+            </p>
+          </article>
+          <div class="flex flex-col gap-4 lg:h-[20%] lg:mt-4 lg:gap-4">
+            <h2 class="text-2xl font-semibold text-[#87b10b]">Tech Stack:</h2>
+            <div
+              id="tech-stack"
+              class="flex flex-wrap gap-2 justify-center items-start"
+            ></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- experience -->
+      <section
+        class="relative flex h-dvh overflow-hidden lg:h-svh lg:flex lg:justify-center"
+        id="experience"
+      >
+        <div class="z-30 pt-20 px-4 flex flex-col gap-4 lg:w-[70%] lg:gap-8">
+          <h1 class="text-5xl font-bold text-white">Experience</h1>
+          <div
+            class="mx-2 p-0 my-1 px-4 lg:p-8 rounded-lg bg-[#D6EF8] bg-opacity-90 backdrop-blur-2xl text-slate-900"
+          >
+            <span class="text-lg text-white">
+              Here is a summary of my professional experience and notable
+              achievements. Click on each item to view more details about my
+              roles and accomplishments.
+            </span>
+          </div>
+          <div id="job-container"></div>
+        </div>
+        <video
+          autoplay
+          loop
+          muted
+          class="absolute z-10 w-full h-full object-cover"
+        >
+          <source src="public/assets/vid/bg_live_2.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </section>
+
+      <!-- project -->
+      <section
+        class="h-svh m-2 lg:h-svh lg:flex lg:justify-center"
+        id="project"
+      >
+        <div class="pt-20 px-4 h-full flex flex-col gap-4 lg:w-[70%] lg:gap-8">
+          <div class="flex flex-col gap-8">
+            <h1 class="text-5xl font-bold text-[#87b10b]">Project</h1>
+            <p>
+              Let me show you a few of the projects I've been working on lately.
+              See the results below!
+            </p>
+          </div>
+
+          <div
+            class="max-w-full relative mt-28 lg:mt-0"
+            id="slideshow-container"
+          >
+            <a
+              class="prev absolute top-1/2 transform -translate-y-1/2 px-4 py-2 mr-18 text-black font-bold text-lg transition duration-500 ease-in-out rounded-l-md cursor-pointer select-none"
+              onclick="plusSlides(-1)"
+              ><i class="fas fa-chevron-left"></i
+            ></a>
+            <a
+              class="next absolute top-1/2 right-0 transform -translate-y-1/2 px-4 py-2 text-black font-bold text-lg transition duration-500 ease-in-out rounded-r-md cursor-pointer select-none"
+              onclick="plusSlides(1)"
+              ><i class="fas fa-chevron-right"></i
+            ></a>
+          </div>
+        </div>
+        <!-- <img src="pp.JPG" alt="" /> -->
+      </section>
+
+      <!--contact  -->
+      <section
+        class="relative flex justify-center h-screen items-center overflow-hidden"
+        id="contact"
+      >
+        <div
+          class="z-30 bg-white bg-opacity-80 p-8 rounded-xl shadow-md max-w-md text-center"
+        >
+          <h2 class="text-3xl font-bold text-[#87b10b] mb-4">Contact Me</h2>
+          <p class="text-gray-600 mb-6">
+            Feel free to reach out via email, WhatsApp, or connect with me on
+            social media!
+          </p>
+
+          <div class="flex justify-center space-x-4 mb-6">
+            <!-- Social Media Icons -->
+            <a
+              href="https://facebook.com"
+              target="_blank"
+              class="text-gray-800 hover:text-blue-600 text-3xl"
+            >
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a
+              href="https://twitter.com"
+              target="_blank"
+              class="text-gray-800 hover:text-blue-400 text-3xl"
+            >
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a
+              href="https://instagram.com"
+              target="_blank"
+              class="text-gray-800 hover:text-pink-500 text-3xl"
+            >
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a
+              href="https://linkedin.com"
+              target="_blank"
+              class="text-gray-800 hover:text-blue-700 text-3xl"
+            >
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+          </div>
+
+          <!-- Email and WhatsApp -->
+          <div class="mb-4">
+            <p class="text-gray-700">
+              Email:
+              <a
+                href="mailto:yourname@example.com"
+                class="text-blue-600 hover:underline"
+                >fauzanemailemail@contoh.com</a
+              >
+            </p>
+          </div>
+          <div class="mb-4">
+            <p class="text-gray-700">
+              WhatsApp:
+              <a
+                href="https://wa.me/6285780010304"
+                class="text-green-600 hover:underline"
+                >+62 857-8001-0304</a
+              >
+            </p>
+          </div>
+        </div>
+        <video
+          autoplay
+          loop
+          muted
+          class="absolute z-10 w-full h-full object-cover"
+        >
+          <source src="public/assets/vid/bg_live_3.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </section>
+      <button
+        id="backToTop"
+        class="hidden z-[9999] fixed bottom-4 right-4 bg-green-600 text-white p-3 rounded-full shadow-lg"
+      >
+        <i class="fas fa-arrow-up"></i>
+      </button>
+    </main>
+  </body>
+  <script src="index.js"></script>
+</html>
