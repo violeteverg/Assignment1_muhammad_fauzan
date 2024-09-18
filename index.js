@@ -175,7 +175,6 @@ const jobDatas = [
       "Created a CRM (Customer Relationship Management) application tailored for a finance company.",
       "Successfully integrated 10 critical feature APIs into the application.",
       "Completed 4 unit testing, achieving at least 85% test coverage for each.",
-      "Worked closely with UI/UX designers, backend developers, and business analysts, employing agile practices and using Jira for project management.",
       "Addressed and resolved software bugs and issues to ensure the application’s functionality remained seamless.",
       "Applied the Atomic Design methodology to implement a system design focused on reusable and responsive web components.",
     ],

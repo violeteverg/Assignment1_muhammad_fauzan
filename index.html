@@ -16,9 +16,9 @@
     <!-- main body -->
     <header class="flex justify-center">
       <nav
-        class="w-[95%] z-[9999] rounded-full h-14 flex items-center justify-between px-6 bg-[#4A772F] text-white fixed top-2 mx-auto"
+        class="w-[95%] z-[9999] rounded-full h-14 flex items-center justify-between px-6 bg-green-900 text-white fixed top-2 mx-auto"
       >
-        <a href="#" class="text-2xl font-bold">Fauzan.</a>
+        <a href="#" class="logo text-2xl font-bold">Fauzan.</a>
 
         <!-- desktop view -->
         <ul class="desktop-menu hidden lg:flex space-x-8">
@@ -42,7 +42,7 @@
 
         <!-- mobile view -->
         <ul
-          class="mobile-menu fixed inset-0 bg-[#4A772F] opacity-90 text-white flex flex-col items-center gap-8 text-4xl justify-center translate-x-full transition-transform duration-700"
+          class="logo mobile-menu fixed inset-0 bg-green-900 opacity-90 text-white flex flex-col items-center gap-8 text-4xl justify-center translate-x-full transition-transform duration-700"
         >
           <li>
             <a
@@ -97,36 +97,35 @@
         class="relative flex h-svh overflow-hidden lg:h-svh lg:flex lg:justify-center"
       >
         <div
-          class="z-30 flex justify-center w-[95%] p-3 items-center h-dvh lg:h-svh lg:justify-center lg:items-center"
+          class="z-30 flex justify-center mx-auto w-[95%] p-3 items-center lg:h-svh lg:justify-center lg:items-center"
         >
           <div
-            class="space-y-8 flex flex-col lg:w-full lg:items-start lg:tracking-wide"
+            class="space-y-4 flex flex-col lg:w-full lg:items-start lg:tracking-wide"
           >
+            <span
+              class="text-white rounded-full w-[20%] text-center border lg:w-[10%]"
+              >Junior</span
+            >
             <h1
               class="text-5xl text-white font-outline-2 font-bold lg:text-wrap lg:text-8xl"
             >
               Full-Stack Developer
             </h1>
             <a
-              class="border rounded-full flex bg-white w-[35vw] h-[5vh] flex items-center lg:w-[20vw]"
+              class="border rounded-full flex bg-white w-[60%] h-[5vh] items-center lg:w-[20vw]"
               href="https://docs.google.com/document/d/1qB9-L3SMYVqMCH13a2m6ExXqOn9G2xzO/edit?usp=sharing&ouid=104855444691692986367&rtpof=true&sd=true"
             >
               <span
-                class="inline-flex w-full h-full justify-center items-center text-white font-semibold rounded-l-full rounded-tr-full bg-green-600 hover:bg-teal-700"
+                class="inline-flex flex-1 justify-center items-center text-white font-semibold rounded-l-full rounded-tr-full bg-green-600 hover:bg-green-700 h-full"
                 >Download Resume</span
               >
               <img
                 src="public/assets/svg/arrow-up-right.svg"
                 alt="arrow-up-right"
-                class="m-2"
+                class="w-6 h-6 m-2"
               />
             </a>
           </div>
-          <img
-            src="public/assets/pics/profile_pict.png"
-            alt="profile_pict"
-            class="w-[200px] lg:w-[60%] lg:h-[70%] lg:bottom-0"
-          />
         </div>
         <video
           autoplay
@@ -141,7 +140,7 @@
 
       <!-- about me -->
       <section
-        class="h-svh py-20 px-2 lg:h-svh lg:flex lg:justify-center"
+        class="h-full py-20 px-2 lg:h-svh lg:flex lg:justify-center"
         id="about"
       >
         <div
@@ -171,7 +170,7 @@
             </p>
           </article>
           <div class="flex flex-col gap-4 lg:h-[20%] lg:mt-4 lg:gap-4">
-            <h2 class="text-2xl font-semibold text-[#87b10b]">Tech Stack:</h2>
+            <h2 class="text-3xl font-semibold text-[#87b10b]">My Skills:</h2>
             <div
               id="tech-stack"
               class="flex flex-wrap gap-2 justify-center items-start"
@@ -182,18 +181,17 @@
 
       <!-- experience -->
       <section
-        class="relative flex h-dvh overflow-hidden lg:h-svh lg:flex lg:justify-center"
+        class="relative flex min-h-svh overflow-hidden lg:h-svh lg:flex lg:justify-center"
         id="experience"
       >
-        <div class="z-30 pt-20 px-4 flex flex-col gap-4 lg:w-[70%] lg:gap-8">
+        <div class="z-30 py-20 px-4 flex flex-col gap-4 lg:w-[70%] lg:gap-8">
           <h1 class="text-5xl font-bold text-white">Experience</h1>
           <div
-            class="mx-2 p-0 my-1 px-4 lg:p-8 rounded-lg bg-[#D6EF8] bg-opacity-90 backdrop-blur-2xl text-slate-900"
+            class="mx-2 p-0 my-1 px-4 lg:px-8 lg:py-2 rounded-lg bg-[#D6EF8] bg-opacity-90 backdrop-blur-2xl text-slate-900"
           >
             <span class="text-lg text-white">
-              Here is a summary of my professional experience and notable
-              achievements. Click on each item to view more details about my
-              roles and accomplishments.
+              Click on each item to view more details about my roles and
+              accomplishments.
             </span>
           </div>
           <div id="job-container"></div>
@@ -223,23 +221,19 @@
             </p>
           </div>
 
-          <div
-            class="max-w-full relative mt-28 lg:mt-0"
-            id="slideshow-container"
-          >
+          <div class="w-full relative mt-28 lg:mt-0" id="slideshow-container">
             <a
-              class="prev absolute top-1/2 transform -translate-y-1/2 px-4 py-2 mr-18 text-black font-bold text-lg transition duration-500 ease-in-out rounded-l-md cursor-pointer select-none"
+              class="prev absolute top-1/2 transform -translate-y-1/2 py-2 mr-18 text-black font-bold text-lg transition duration-500 ease-in-out rounded-l-md cursor-pointer select-none"
               onclick="plusSlides(-1)"
               ><i class="fas fa-chevron-left"></i
             ></a>
             <a
-              class="next absolute top-1/2 right-0 transform -translate-y-1/2 px-4 py-2 text-black font-bold text-lg transition duration-500 ease-in-out rounded-r-md cursor-pointer select-none"
+              class="next absolute top-1/2 right-0 transform -translate-y-1/2 py-2 text-black font-bold text-lg transition duration-500 ease-in-out rounded-r-md cursor-pointer select-none"
               onclick="plusSlides(1)"
               ><i class="fas fa-chevron-right"></i
             ></a>
           </div>
         </div>
-        <!-- <img src="pp.JPG" alt="" /> -->
       </section>
 
       <!--contact  -->
