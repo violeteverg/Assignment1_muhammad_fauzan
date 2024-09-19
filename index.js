@@ -24,15 +24,15 @@ function smoothScroll(event) {
 
   hamburger.classList.remove("active");
 
-  const targetId = event.currentTarget.getAttribute("href");
-  const targetElement = document.querySelector(targetId);
+  // const targetId = event.currentTarget.getAttribute("href");
+  // const targetElement = document.querySelector(targetId);
 
-  const offsetPosition = targetElement.offsetTop - 1;
+  // const offsetPosition = targetElement.offsetTop - 1;
 
-  window.scrollTo({
-    top: offsetPosition,
-    behavior: "smooth",
-  });
+  // window.scrollTo({
+  //   top: offsetPosition,
+  //   behavior: "smooth",
+  // });
 }
 
 hamburger.addEventListener("click", toggleMenu);
