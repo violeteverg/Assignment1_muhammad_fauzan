@@ -45,6 +45,20 @@ h2,
   transform: rotate(-45deg) translateY(-8px);
 }
 
+.mobile-menu {
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.mobile-menu.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.mobile-menu:not(.hidden) {
+  opacity: 1;
+  visibility: visible;
+}
+
 /* Fading animation */
 .fade {
   animation-name: fade;

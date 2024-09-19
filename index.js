@@ -1,45 +1,46 @@
-//section function hamburger menu
+// Select elements
 const menu = document.querySelector(".mobile-menu");
 const hamburger = document.querySelector(".hamburger");
 const menuItems = document.querySelectorAll(".menuItem");
+const navbar = document.querySelector("nav");
+let lastScrollTop = 0;
+let timeout;
 
+// Toggle mobile menu on click
 hamburger.addEventListener("click", function () {
   this.classList.toggle("active");
+  menu.classList.toggle("hidden");
 });
 
-function toggleMenu() {
-  if (menu.classList.contains("translate-x-full")) {
-    menu.classList.remove("translate-x-full");
-    menu.classList.add("translate-x-0");
-  } else {
-    menu.classList.add("translate-x-full");
-    menu.classList.remove("translate-x-0");
-  }
-}
-
-function smoothScroll(event) {
-  // event.preventDefault();
-  menu.classList.add("translate-x-full");
-  menu.classList.remove("translate-x-0");
-
-  hamburger.classList.remove("active");
-
-  // const targetId = event.currentTarget.getAttribute("href");
-  // const targetElement = document.querySelector(targetId);
-
-  // const offsetPosition = targetElement.offsetTop - 1;
-
-  // window.scrollTo({
-  //   top: offsetPosition,
-  //   behavior: "smooth",
-  // });
-}
-
-hamburger.addEventListener("click", toggleMenu);
-
+// Close mobile menu after clicking on a menu item
 menuItems.forEach((menuItem) => {
-  menuItem.addEventListener("click", smoothScroll);
+  menuItem.addEventListener("click", () => {
+    menu.classList.add("hidden");
+    hamburger.classList.remove("active");
+  });
 });
+
+// Hide navbar on scroll down and show on scroll up
+// window.addEventListener("scroll", () => {
+//   let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+//   // Scroll down: hide navbar
+//   if (scrollTop > lastScrollTop) {
+//     navbar.style.transform = "translateY(-100%)";
+//   } else {
+//     // Scroll up: show navbar
+//     navbar.style.transform = "translateY(0)";
+//   }
+
+//   lastScrollTop = scrollTop;
+
+//   // Clear timeout to detect scroll stop
+//   clearTimeout(timeout);
+//   timeout = setTimeout(() => {
+//     // Show navbar after scroll stops
+//     navbar.style.transform = "translateY(0)";
+//   }, 200);
+// });
 
 // //section button back to hero
 // const backToTopButton = document.getElementById("backToTop");
