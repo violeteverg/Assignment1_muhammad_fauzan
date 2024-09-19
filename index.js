@@ -41,27 +41,27 @@ menuItems.forEach((menuItem) => {
   menuItem.addEventListener("click", smoothScroll);
 });
 
-//section button back to hero
-const backToTopButton = document.getElementById("backToTop");
-const heroSection = document.querySelector("section");
+// //section button back to hero
+// const backToTopButton = document.getElementById("backToTop");
+// const heroSection = document.querySelector("section");
 
-// Fungsi that show button if melewati hero section
-function handleScroll() {
-  const heroBottom = heroSection.getBoundingClientRect().bottom;
-  console.log(">>>>", heroBottom);
+// // Fungsi that show button if melewati hero section
+// function handleScroll() {
+//   const heroBottom = heroSection.getBoundingClientRect().bottom;
+//   console.log(">>>>", heroBottom);
 
-  if (window.scrollY > heroBottom) {
-    backToTopButton.classList.remove("hidden");
-  } else {
-    backToTopButton.classList.add("hidden");
-  }
-}
+//   if (window.scrollY > heroBottom) {
+//     backToTopButton.classList.remove("hidden");
+//   } else {
+//     backToTopButton.classList.add("hidden");
+//   }
+// }
 
-window.addEventListener("scroll", handleScroll);
+// window.addEventListener("scroll", handleScroll);
 
-backToTopButton.addEventListener("click", () => {
-  window.scrollTo({ top: 0, behavior: "smooth" });
-});
+// backToTopButton.addEventListener("click", () => {
+//   window.scrollTo({ top: 0, behavior: "smooth" });
+// });
 
 //section function card
 const techStack = [
