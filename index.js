@@ -1,68 +1,67 @@
-// Select elements
+//section function hamburger menu
 const menu = document.querySelector(".mobile-menu");
 const hamburger = document.querySelector(".hamburger");
 const menuItems = document.querySelectorAll(".menuItem");
-const navbar = document.querySelector("nav");
-let lastScrollTop = 0;
-let timeout;
 
-// Toggle mobile menu on click
 hamburger.addEventListener("click", function () {
   this.classList.toggle("active");
-  menu.classList.toggle("hidden");
 });
 
-// Close mobile menu after clicking on a menu item
-menuItems.forEach((menuItem) => {
-  menuItem.addEventListener("click", () => {
-    menu.classList.add("hidden");
-    hamburger.classList.remove("active");
+function toggleMenu() {
+  if (menu.classList.contains("translate-x-full")) {
+    menu.classList.remove("translate-x-full");
+    menu.classList.add("translate-x-0");
+  } else {
+    menu.classList.add("translate-x-full");
+    menu.classList.remove("translate-x-0");
+  }
+}
+
+function smoothScroll(event) {
+  // event.preventDefault();
+  menu.classList.add("translate-x-full");
+  menu.classList.remove("translate-x-0");
+
+  hamburger.classList.remove("active");
+
+  const targetId = event.currentTarget.getAttribute("href");
+  const targetElement = document.querySelector(targetId);
+
+  const offsetPosition = targetElement.offsetTop - 1;
+
+  window.scrollTo({
+    top: offsetPosition,
+    behavior: "smooth",
   });
+}
+
+hamburger.addEventListener("click", toggleMenu);
+
+menuItems.forEach((menuItem) => {
+  menuItem.addEventListener("click", smoothScroll);
 });
 
-// Hide navbar on scroll down and show on scroll up
-// window.addEventListener("scroll", () => {
-//   let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+//section button back to hero
+const backToTopButton = document.getElementById("backToTop");
+const heroSection = document.querySelector("section");
 
-//   // Scroll down: hide navbar
-//   if (scrollTop > lastScrollTop) {
-//     navbar.style.transform = "translateY(-100%)";
-//   } else {
-//     // Scroll up: show navbar
-//     navbar.style.transform = "translateY(0)";
-//   }
+// Fungsi that show button if melewati hero section
+function handleScroll() {
+  const heroBottom = heroSection.getBoundingClientRect().bottom;
+  console.log(">>>>", heroBottom);
 
-//   lastScrollTop = scrollTop;
+  if (window.scrollY > heroBottom) {
+    backToTopButton.classList.remove("hidden");
+  } else {
+    backToTopButton.classList.add("hidden");
+  }
+}
 
-//   // Clear timeout to detect scroll stop
-//   clearTimeout(timeout);
-//   timeout = setTimeout(() => {
-//     // Show navbar after scroll stops
-//     navbar.style.transform = "translateY(0)";
-//   }, 200);
-// });
+window.addEventListener("scroll", handleScroll);
 
-// //section button back to hero
-// const backToTopButton = document.getElementById("backToTop");
-// const heroSection = document.querySelector("section");
-
-// // Fungsi that show button if melewati hero section
-// function handleScroll() {
-//   const heroBottom = heroSection.getBoundingClientRect().bottom;
-//   console.log(">>>>", heroBottom);
-
-//   if (window.scrollY > heroBottom) {
-//     backToTopButton.classList.remove("hidden");
-//   } else {
-//     backToTopButton.classList.add("hidden");
-//   }
-// }
-
-// window.addEventListener("scroll", handleScroll);
-
-// backToTopButton.addEventListener("click", () => {
-//   window.scrollTo({ top: 0, behavior: "smooth" });
-// });
+backToTopButton.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
 
 //section function card
 const techStack = [
