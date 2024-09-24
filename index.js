@@ -1,44 +1,98 @@
-//section function hamburger menu
-const menu = document.querySelector(".mobile-menu");
+// Get the hamburger button and header
 const hamburger = document.querySelector(".hamburger");
-const menuItems = document.querySelectorAll(".menuItem");
+const header = document.getElementById("main-header");
+let lastScrollTop = 0;
+let scrollTimeout;
 
-hamburger.addEventListener("click", function () {
-  this.classList.toggle("active");
+// Navbar scroll behavior
+window.addEventListener("scroll", function () {
+  const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+  // Clear the existing timeout
+  clearTimeout(scrollTimeout);
+
+  // Hide the header when scrolling down
+  if (scrollTop > lastScrollTop && scrollTop > 50) {
+    header.classList.add("hidden");
+  } else if (scrollTop < lastScrollTop) {
+    // Show the header when scrolling up
+    header.classList.remove("hidden");
+  }
+
+  lastScrollTop = scrollTop;
+
+  // Set a timeout to show the header after scrolling stops
+  scrollTimeout = setTimeout(function () {
+    header.classList.remove("hidden");
+  }, 500); // Show header 0.5 seconds after scrolling stops
 });
 
-function toggleMenu() {
-  if (menu.classList.contains("translate-x-full")) {
-    menu.classList.remove("translate-x-full");
-    menu.classList.add("translate-x-0");
+// Create mobile menu dynamically
+const mobileMenu = document.createElement("ul");
+mobileMenu.className =
+  "logo mobile-menu hidden bg-green-900 opacity-90 text-white fixed inset-y-0 right-0 w-0 overflow-hidden flex flex-col items-center gap-8 text-4xl justify-center transition-all duration-300 ease-in-out";
+mobileMenu.innerHTML = `
+  <li>
+    <a href="#about" class="menuItem hover:text-green-500 hover:underline">About</a>
+  </li>
+  <li>
+    <a href="#experience" class="menuItem hover:text-green-500 hover:underline">Experience</a>
+  </li>
+  <li>
+    <a href="#project" class="menuItem hover:text-green-500 hover:underline">Project</a>
+  </li>
+  <li>
+    <a href="#contact" class="menuItem hover:text-green-500 hover:underline">Contact</a>
+  </li>
+`;
+
+// Append mobile menu to the body
+document.body.appendChild(mobileMenu);
+
+// Add click event listener for hamburger menu
+hamburger.addEventListener("click", function () {
+  this.classList.toggle("active");
+
+  if (mobileMenu.classList.contains("hidden")) {
+    mobileMenu.classList.remove("hidden");
+    // Use setTimeout to ensure the transition is visible
+    setTimeout(() => {
+      mobileMenu.classList.add("block");
+    }, 10);
   } else {
-    menu.classList.add("translate-x-full");
-    menu.classList.remove("translate-x-0");
+    mobileMenu.classList.remove("block");
+    // Wait for the transition to finish before adding 'hidden'
+    mobileMenu.addEventListener("transitionend", function handler() {
+      mobileMenu.classList.add("hidden");
+      mobileMenu.removeEventListener("transitionend", handler);
+    });
   }
-}
+});
 
-function smoothScroll(event) {
-  // event.preventDefault();
-  menu.classList.add("translate-x-full");
-  menu.classList.remove("translate-x-0");
+// Close mobile menu when clicking on a menu item
+const menuItems = mobileMenu.querySelectorAll(".menuItem");
+menuItems.forEach((item) => {
+  item.addEventListener("click", (event) => {
+    // Prevent immediate default action
+    event.preventDefault();
 
-  hamburger.classList.remove("active");
+    // Close the menu
+    hamburger.classList.remove("active");
+    mobileMenu.classList.remove("block");
 
-  const targetId = event.currentTarget.getAttribute("href");
-  const targetElement = document.querySelector(targetId);
+    // Wait for the transition to finish
+    mobileMenu.addEventListener(
+      "transitionend",
+      function handler() {
+        mobileMenu.classList.add("hidden");
+        mobileMenu.removeEventListener("transitionend", handler);
 
-  const offsetPosition = targetElement.offsetTop - 1;
-
-  window.scrollTo({
-    top: offsetPosition,
-    behavior: "smooth",
+        // After the menu is closed, navigate to the href
+        window.location.href = item.getAttribute("href");
+      },
+      { once: true }
+    );
   });
-}
-
-hamburger.addEventListener("click", toggleMenu);
-
-menuItems.forEach((menuItem) => {
-  menuItem.addEventListener("click", smoothScroll);
 });
 
 //section button back to hero
@@ -175,7 +229,7 @@ const jobDatas = [
       "Created a CRM (Customer Relationship Management) application tailored for a finance company.",
       "Successfully integrated 10 critical feature APIs into the application.",
       "Completed 4 unit testing, achieving at least 85% test coverage for each.",
-      "Addressed and resolved software bugs and issues to ensure the application’s functionality remained seamless.",
+      "Addressed and resolved software bugs and issues to ensure the application's functionality remained seamless.",
       "Applied the Atomic Design methodology to implement a system design focused on reusable and responsive web components.",
     ],
   },
