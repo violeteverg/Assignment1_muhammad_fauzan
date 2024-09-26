@@ -10,6 +10,8 @@
     />
 
     <link rel="stylesheet" href="style.css" />
+    <!-- <link rel="stylesheet" href="../../assets/vendor/aos/dist/aos.css" /> -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <title>Web porto</title>
   </head>
   <body>
@@ -117,8 +119,18 @@
         <div
           class="p-4 flex flex-col gap-4 lg:w-[70%] lg:justify-center lg:gap-1"
         >
-          <h1 class="text-5xl font-bold lg:h-[20%] text-[#87b10b]">About me</h1>
-          <article class="text-wrap text-slate-900 lg:text-lg">
+          <h1
+            class="text-5xl font-bold lg:h-[20%] text-[#87b10b]"
+            data-aos="zoom-in"
+            data-aos-easing="ease-out-cubic"
+            data-aos-duration="1000"
+          >
+            About me
+          </h1>
+          <article
+            class="text-wrap text-slate-900 lg:text-lg"
+            data-aos="fade-up"
+          >
             <p>
               Passionate and motivated Junior Fullstack Developer with a strong
               foundation in front-end technologies. Eager to leverage skills in
@@ -141,7 +153,12 @@
             </p>
           </article>
           <div class="flex flex-col gap-4 lg:h-[20%] lg:mt-4 lg:gap-4">
-            <h2 class="text-3xl font-semibold text-[#87b10b]">My Skills:</h2>
+            <h2
+              class="text-3xl font-semibold text-[#87b10b]"
+              data-aos="fade-right"
+            >
+              My Skills:
+            </h2>
             <div
               id="tech-stack"
               class="flex flex-wrap gap-2 justify-center items-start"
@@ -160,9 +177,19 @@
         id="experience"
       >
         <div class="py-20 px-4 flex flex-col gap-4 lg:w-[70%] lg:gap-8">
-          <h1 class="text-5xl font-bold text-white">Experience</h1>
+          <h1
+            class="text-5xl font-bold text-white"
+            data-aos="zoom-in"
+            data-aos-easing="ease-out-cubic"
+            data-aos-duration="1000"
+          >
+            Experience
+          </h1>
           <div
             class="mx-2 p-0 my-1 px-4 lg:px-8 lg:py-2 rounded-lg bg-[#D6EF8] bg-opacity-90 backdrop-blur-2xl text-slate-900"
+            data-aos="flip-down"
+            data-aos-easing="ease-out-cubic"
+            data-aos-duration="1000"
           >
             <span class="text-lg text-white">
               Click on each item to view more details about my roles and
@@ -189,7 +216,14 @@
       >
         <div class="pt-20 px-4 h-full flex flex-col gap-4 lg:w-[70%] lg:gap-8">
           <div class="flex flex-col gap-8">
-            <h1 class="text-5xl font-bold text-[#87b10b]">Project</h1>
+            <h1
+              class="text-5xl font-bold text-[#87b10b]"
+              data-aos="zoom-in"
+              data-aos-easing="ease-out-cubic"
+              data-aos-duration="1000"
+            >
+              Project
+            </h1>
             <p>
               Let me show you a few of the projects I've been working on lately.
               See the results below!
@@ -302,4 +336,8 @@
     </main>
   </body>
   <script src="index.js"></script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
 </html>

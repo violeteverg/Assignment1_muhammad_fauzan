@@ -193,6 +193,7 @@ const techStack = [
 ];
 
 const techStackContainer = document.getElementById("tech-stack");
+// Add AOS attributes to tech cards
 
 techStack.forEach((tech) => {
   const techCard = document.createElement("div");
@@ -210,6 +211,9 @@ techStack.forEach((tech) => {
     "h-8",
     "lg:h-10"
   );
+  techCard.setAttribute("data-aos", "flip-left");
+  techCard.setAttribute("data-aos-easing", "ease-out-cubic");
+  techCard.setAttribute("data-aos-duration", "1000");
 
   techCard.innerHTML = `
     <img src="${tech.imgSrc}" alt="${tech.name}_svg" class="h-6" />
@@ -241,7 +245,7 @@ const jobContainer = document.getElementById("job-container");
 jobDatas.forEach((jobs) => {
   const jobElement = document.createElement("div");
   jobElement.innerHTML = `
-    <div class="accordion w-full flex bg-[#0B7F55] text-white justify-between items-center p-3 transition ease-in-out delay-150 rounded-xl">
+    <div class="accordion w-full flex bg-[#0B7F55] text-white justify-between items-center p-3 transition ease-in-out delay-150 rounded-xl" data-aos="flip-up" data-aos-easing="ease-out-cubic" data-aos-duration="1000">
       <img src="${jobs.img}" alt="logo" width="150"/>
       <span>${jobs.title}</span>
     </div>
