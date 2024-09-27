@@ -266,7 +266,17 @@ jobDatas.forEach((jobs) => {
   jobContainer.appendChild(jobElement);
 });
 
-// Menambahkan event listener untuk accordion
+// add event listener for accordion
+// Function to handle accordion behavior
+// This function adds click event listeners to all elements with the "accordion" class
+// When an accordion is clicked, it toggles the "active" class and expands/collapses the associated panel
+
+// Loop through all accordion elements
+// For each accordion:
+//   - Add a click event listener
+//   - Toggle the "active" class on click
+//   - Expand or collapse the associated panel based on its current state
+
 let accordion = document.getElementsByClassName("accordion");
 let i;
 
